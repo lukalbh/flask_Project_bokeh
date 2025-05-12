@@ -1,0 +1,156 @@
+/* Réinitialisation des styles par défaut pour tous les éléments */
+* {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements par défaut */
+    box-sizing: border-box; /* Assure que la largeur et la hauteur incluent les bordures et les espacements */
+    font-family: 'Segoe UI', sans-serif; /* Définit la police de caractères par défaut */
+}
+
+/* Style général du body (corps de la page) */
+body {
+    background-color: #f5f6fa; /* Couleur de fond légère */
+    padding: 20px; /* Ajoute un espacement autour du contenu */
+}
+
+/* Conteneur principal du tableau de bord */
+.dashboard-container {
+    max-width: 1200px; /* Largeur maximale du tableau de bord */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+}
+
+/* Style de l'en-tête du tableau de bord (section supérieure) */
+.header {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between; /* Espace entre les éléments à gauche et à droite */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    margin-bottom: 30px; /* Marge en bas de l'en-tête */
+}
+
+/* Style du texte de bienvenue */
+.welcome-text {
+    font-size: 24px; /* Taille de la police */
+    color: #2c3e50; /* Couleur du texte */
+    margin-top: 20px; /* Marge en haut */
+}
+
+/* Style pour la date */
+.date {
+    color: #7f8c8d; /* Couleur plus claire pour la date */
+    font-size: 16px; /* Taille de la police */
+}
+
+/* Grille pour les statistiques */
+.stats-grid {
+    display: grid; /* Utilisation de la grille CSS pour disposer les éléments */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonne ajustable selon la taille de l'écran */
+    gap: 20px; /* Espacement entre les éléments de la grille */
+    margin-bottom: 30px; /* Marge sous la grille */
+}
+
+/* Style des cartes de statistiques */
+.stat-card {
+    background: white; /* Fond blanc pour chaque carte */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Ombre légère autour des cartes */
+    display: flex; /* Flexbox pour aligner les éléments à l'intérieur de la carte */
+    align-items: center; /* Aligne les éléments verticalement */
+    gap: 15px; /* Espacement entre l'icône et le texte */
+}
+
+/* Style des informations de la carte statistique (titre et valeur) */
+.stat-info h3 {
+    color: #7f8c8d; /* Couleur plus claire pour le titre */
+    font-size: 14px; /* Taille plus petite pour le titre */
+    margin-bottom: 5px; /* Marge sous le titre */
+}
+
+.stat-info p {
+    color: #2c3e50; /* Couleur du texte principal */
+    font-size: 24px; /* Taille plus grande pour la valeur */
+    font-weight: bold; /* Texte en gras pour la valeur */
+}
+
+/* Grille pour les graphiques */
+.charts-container {
+    display: grid; /* Utilisation de la grille pour afficher les graphiques */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Colonnes flexibles en fonction de la taille de l'écran */
+    gap: 20px; /* Espacement entre les graphiques */
+    margin-bottom: 30px; /* Marge sous la grille de graphiques */
+}
+
+/* Style des cartes de graphiques */
+.chart-card {
+    background: white; /* Fond blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Ombre légère autour des cartes de graphique */
+}
+
+/* Titre des cartes de graphiques */
+.chart-card h3 {
+    color: #2c3e50; /* Couleur du titre */
+    margin-bottom: 20px; /* Marge sous le titre */
+}
+
+/* Style du conteneur de graphique par défaut (placehoder) */
+.chart-placeholder {
+    height: 300px; /* Hauteur du conteneur pour un graphique vide */
+    background: #f8f9fa; /* Couleur de fond pour le conteneur vide */
+    border-radius: 5px; /* Coins arrondis */
+    display: flex; /* Flexbox pour centrer le texte */
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
+    color: #7f8c8d; /* Couleur du texte */
+}
+
+/* Section des récentes activités */
+.recent-activities {
+    background: white; /* Fond blanc */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Ombre légère autour de la section */
+}
+
+/* Titre de la section des récentes activités */
+.recent-activities h3 {
+    color: #2c3e50; /* Couleur du titre */
+    margin-bottom: 20px; /* Marge sous le titre */
+}
+
+/* Liste des activités */
+.activity-list {
+    list-style: none; /* Retire les puces de la liste */
+}
+
+/* Style des informations de chaque activité */
+.activity-info {
+    flex: 1; /* Prend toute la largeur restante */
+}
+
+/* Titre de l'activité */
+.activity-info h4 {
+    color: #2c3e50; /* Couleur du titre de l'activité */
+    margin-bottom: 5px; /* Marge sous le titre */
+}
+
+#questions {
+    text-align: center;
+}
+
+/* Description de l'activité */
+.activity-info p {
+    color: #7f8c8d; /* Couleur plus claire pour la description */
+    font-size: 14px; /* Taille de la police */
+}
+
+/* Heure de l'activité */
+.activity-time {
+    color: #7f8c8d; /* Couleur de l'heure */
+    font-size: 14px; /* Taille de la police */
+}
+
+/* Style des éléments d'activité */
+.activity-item {
+    margin-bottom: 20px; /* Ajoute de l'espace entre les éléments de la liste */
+}

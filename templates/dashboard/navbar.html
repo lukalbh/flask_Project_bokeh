@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        
+        <link rel="icon" type="image/png" href="/static/img/iconDataCup.jpeg">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/nav-bar.css') }}">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="/static/img/banner.jpeg" alt="Logo" class="navbar-logo">
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="{{ url_for('dash') }}" class="nav-link"><img src="/static/img/home.svg" alt="Accueil" class="nav-icon"> Accueil</a></li>
+                    <li><a href="{{ url_for('graph') }}" class="nav-link"><img src="/static/img/bar-chart-2.svg" alt="Graphique" class="nav-icon"> Graphique</a></li>
+                    <li><a href="{{ url_for('localisation') }}" class="nav-link"><img src="/static/img/map-pin.svg" alt="Localisation" class="nav-icon"> Localisation</a></li>
+                    <li><a href="{{ url_for('loginTech') }}" class="nav-link"><img src="/static/img/sliders.svg" alt="Config" class="nav-icon"> Configuration</a></li>
+                    <li><a href="{{ url_for('logout') }}" class="nav-link logout"> <img src="/static/img/log-out.svg" alt="Déconnexion" class="nav-icon"> Déconnexion</a></li>
+                </ul>
+            </div>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+/* Reset et styles de base */
+* {
+    margin: 0;                /* Supprime les marges par défaut des éléments */
+    padding: 0;               /* Supprime les paddings par défaut des éléments */
+    box-sizing: border-box;   /* Permet de mieux contrôler la taille des éléments en incluant bordures et padding dans la largeur/hauteur */
+}
+
+
+.navbar {
+    background-color: var(--navbar-bg);        /* Fond de la navbar, récupéré depuis les variables globales */
+    padding: 1rem 2rem;                        /* Espacement interne (haut/bas = 1rem, gauche/droite = 2rem) */
+    display: flex;                             /* Utilisation de Flexbox pour la disposition */
+    justify-content: space-between;            /* Espace égal entre les éléments (logo à gauche, menu à droite) */
+    align-items: center;                       /* Alignement vertical des éléments dans la navbar */
+    box-shadow: 0 10px 4px rgba(0,0,0,0.1);    /* Ombre légère sous la navbar pour l'effet de profondeur */
+    top: 0;                                    /* Fixer la navbar en haut de la page */
+    z-index: 1000;                             /* S'assurer que la navbar soit au-dessus des autres éléments */
+    border-radius: 30px;                       /* Coins arrondis pour un effet visuel plus doux */
+}
+
+
+.navbar-brand {
+    display: flex;                             /* Utilisation de Flexbox pour centrer le logo et son texte */
+    align-items: center;                       /* Alignement vertical du logo et du texte */
+}
+
+
+.navbar-logo {
+    height: 40px;  /* Hauteur du logo */
+    width: auto;   /* Largeur automatique pour préserver les proportions */
+}
+
+
+.navbar-menu ul {
+    display: flex;                              /* Disposition horizontale des éléments de la liste */
+    list-style: none;                           /* Suppression des puces de la liste */
+    gap: 2rem;                                  /* Espacement de 2rem entre les éléments */
+    margin: 0;                                  /* Suppression de la marge externe */
+    padding: 0;                                 /* Suppression du padding interne */
+}
+
+.nav-link {
+    color: var(--navbar-text);                  /* Couleur du texte des liens, récupérée depuis les variables globales */
+    text-decoration: none;                      /* Supprime le soulignement des liens */
+    font-weight: 500;                           /* Poids de la police des liens (semi-gras) */
+    padding: 0.5rem 1rem;                       /* Espacement interne du lien */
+    border-radius: 6px;                         /* Coins arrondis des liens */
+    transition: all 0.3s ease;                  /* Transition douce pour l'effet de survol */
+    display: flex;                              /* Utilisation de Flexbox pour aligner l'icône et le texte */
+    align-items: center;                        /* Alignement des éléments dans le lien (icône et texte) */
+    gap: 0.5rem;                                /* Espacement entre l'icône et le texte */
+}
+
+.nav-link i {
+    font-size: 1.1rem; /* Taille de l'icône dans le lien */
+}
+
+
+.nav-link:hover {
+    background-color: var(--navbar-hover);  /* Change le fond des liens au survol */
+    color: var(--primary-color);             /* Change la couleur du texte au survol */
+}
+
+
+.nav-link.active {
+    background-color: var(--navbar-active);  /* Fond spécifique quand le lien est actif */
+    color: var(--primary-color);              /* Couleur du texte quand le lien est actif */
+}
+
+
+.nav-link.logout {
+    color: var(--danger-color);               /* Couleur rouge pour le lien de déconnexion */
+}
+
+.nav-link.logout:hover {
+    background-color: #fee2e2;                /* Fond plus clair au survol pour le lien de déconnexion */
+}
+
+.nav-link:hover {
+    background-color: #fee2e2;
+}
+
+
+.nav-icon {
+    width: 50px;                              /* Taille des icônes dans la navbar */
+    height: 50px;                             /* Hauteur des icônes */
+    vertical-align: middle;                   /* Alignement vertical des icônes */
+    margin-right: 8px;                        /* Espacement à droite des icônes */
+}
+
+
+.nav-link {
+    display: flex;                              /* Utilisation de Flexbox pour aligner l'icône et le texte */
+    align-items: center;                        /* Alignement vertical des éléments à l'intérieur du lien */
+}
+
+.nav-link img {
+    margin-right: 8px;                         /* Espacement entre l'image et le texte dans le lien */
+}

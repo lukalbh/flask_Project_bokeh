@@ -1,0 +1,97 @@
+/* graphique.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* ---- OPTIONS BLOCK (Graph types + Farm selector) ---- */
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+}
+
+.option-block {
+    flex: 1;
+    min-width: 250px;
+}
+
+#farmSelect {
+    width: 100%; /* Prend toute la largeur de son conteneur parent */
+    max-width: 400px; /* Limiter la largeur maximale */
+    padding: 10px; /* Ajouter de l'espace à l'intérieur du champ */
+    font-size: 16px; /* Agrandir la taille du texte */
+    border: 1px solid #ccc; /* Bordure fine */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #f9f9f9; /* Couleur de fond claire */
+    transition: border-color 0.3s ease; /* Ajouter un effet au survol */
+}
+
+.option-block p,
+.option-block label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.checkbox-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* ---- Card (graph containers) ---- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2980b9;
+}
+
+.graph-container {
+    width: 100%;
+    overflow-x: auto;
+}
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="/static/img/iconDataCup.jpeg">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/login.css') }}">
+</head>
+<body>
+    <div class="divh">
+        <h1 class="log">DataCup Identifiant</h1>
+    </div>
+    <div class="divform">
+        <form method="POST" class="form" action="{{ url_for('login') }}">
+           <label for="username" class="userlab">Nom d'utilisateur :</label>
+           <input placeholder="root" type="text" id="username" name="username" class="inpu"><br>
+
+           <label for="password" class="passlab">Mot de passe :</label>
+           <input placeholder="entrez votre mot de passe" type="password" id="password" name="password" class="inpp"><br>
+
+           <input class="btn-id" type="submit" value="Se connecter">
+        </form>
+    </div>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

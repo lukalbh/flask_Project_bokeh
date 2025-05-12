@@ -1,0 +1,134 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* Titre */
+.title-loc {
+    text-align: center;
+    margin: 30px 0;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.title-loc::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #b96c2d, #000000);
+    border-radius: 2px;
+}
+
+/* Sélecteurs */
+.select {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* Label des sélecteurs */
+.select label {
+    display: block;
+    font-weight: 500;
+    color: #2c3e50; /* Couleur du texte pour le label */
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin-left: 45px; /* Décale le conteneur un peu vers la droite */
+    padding: auto; /* Supprime tout le padding */
+    border: 2px solid #d3d3d3; /* Ajoute une bordure grise */
+    background-color: #f0f0f0; /* Fond gris clair */
+    border-radius: 8px; /* Ajoute des coins arrondis */
+}
+
+
+/* Sélecteurs de choix (SHIELD et Capteur) */
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff; /* Fond blanc */
+    font-size: 1rem;
+    color: #333; /* Texte noir pour une meilleure lisibilité */
+    transition: all 0.3s ease;
+    appearance: none; /* Enlève les styles par défaut du navigateur */
+}
+
+
+/* Option sélectionnée */
+select option {
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Effet visuel lors du survol des options */
+select:hover {
+    border-color: #3498db; /* Change la bordure lors du survol */
+}
+
+
+
+/* Conteneur des informations */
+.containers {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.containers div {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.containers div:hover {
+    background: #e9f7fe;
+    transform: translateY(-2px);
+}
+
+.containers div span {
+    font-weight: 600;
+    color: #3498db;
+}
+
+#map {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: absolute;
+    top: 200px; /* Descend le pour l'aligner */
+    right: 50%;
+    left: 70%;
+    transform: translateX(-50%);
+}

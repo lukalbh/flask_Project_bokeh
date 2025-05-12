@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Éditeur de Configuration</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/config.css') }}">
+    <script defer src="{{ url_for('static', filename='js/configEditor.js') }}"></script>
+</head>
+
+<body>
+    {% include 'dashboard/navbar.html' %}
+    <h1>Édition du fichier config.json</h1>
+
+    <textarea id="json-editor" style="width: 90%; height: 400px; font-family: monospace;"></textarea>
+    <br>
+    <button onclick="saveRawConfig()">Sauvegarder</button>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ ressources | safe }}
+    <title>Dashboard Agricole</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboardMain.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1 class="welcome-text">Bonjour, M/Mme {{ username }}</h1>
+            <div class="date">DataCup@Property</div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Température Moyenne</h3>
+                    <p>{{ tempMoyenne }}°C</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>Humidité Moyenne</h3>
+                    <p>65%</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-info">
+                    <h3>pH Moyen</h3>
+                    <p>5</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>Évolution de la température</h3>
+                <div>
+                    {{ div | safe }}
+                </div>
+            </div>
+            {{ script | safe }}
+            <div class="chart-card">
+                <h3>Niveaux d'humidité</h3>
+                <div class="chart-placeholder">
+                    {{ div2 | safe }}
+                    
+                </div>
+            </div>
+            {{ script2 | safe }}
+        </div>
+
+        <div class="recent-activities">
+            <h3></h3>
+            <ul class="activity-list">
+                <li class="activity-item">
+                    <div class="activity-info">
+                        <h4 id="questions">Question fréquentes.</h4>
+                        <p></p>
+                    </div>
+                    <div class="activity-time"></div>
+                </li>
+
+                <li class="activity-item">
+                    <div class="activity-info">
+                        <h4>Comment fonctionne l'onglet Graphique ?</h4>
+                        <p>Cet onglet vous permet de visualiser différents types de graphiques dynamiques pour les données de fermes,
+                            offrant une vue d'ensemble et une analyse visuelle des informations.</p>
+                    </div>
+                    <div class="activity-time"></div>
+                </li>
+
+                <li class="activity-item">
+                    <div class="activity-info">
+                        <h4>Comment fonctionne l'onglet Localisation ?</h4>
+                        <p>Cet onglet vous permet de localiser les capteurs (SHIELD) installés dans différentes fermes sur une carte interactive 
+                            et d'afficher des informations détaillées sur ces capteurs.</p>
+                    </div>
+                    <div class="activity-time"></div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-info">
+                        <h4>Comment fonctionne l'onglet Configuration ?</h4>
+                        <p>Cet onglet vous permet de faire les configurations necessaires pour la localisation, l'identification des différents SHIELD et fermes.</p>
+                    </div>
+                    <div class="activity-time"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

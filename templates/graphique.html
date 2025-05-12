@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/static/img/iconDataCup.jpeg">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/graphique.css') }}">
+    <script src="{{ url_for('static', filename='js/graphique.js') }}" defer></script>
+    {{ ressources | safe }}
+    <title>Graphiques</title>
+</head>
+<body>
+    {% include 'dashboard/navbar.html' %}
+    <div class="container">
+        <h1>Graphiques dynamiques avec Bokeh</h1>
+
+        <!-- Section des options de type de graphique + choix de ferme -->
+        <div class="options-container">
+            <div class="option-block">
+                <p><strong>Choisir un type de graphique :</strong></p>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="barChart" name="chartType" value="bar" onchange="handleChangeBox()">
+                    <label for="barChart">Graphique en barres</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="lineChart" name="chartType" value="line" onchange="handleChangeBox()">
+                    <label for="lineChart">Graphique linéaire</label>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="pieChart" name="chartType" value="pie" onchange="handleChangeBox()">
+                    <label for="pieChart">Graphique circulaire</label>
+                </div>
+            </div>
+
+            <div class="option-block">
+                <label for="farmSelect"><strong>Choisir une ferme :</strong></label>
+                <select id="farmSelect">
+                    <option value="">-- Sélectionner une ferme --</option>
+                </select>
+                <div id="shieldList" style="margin-top: 15px;"></div>
+            </div>
+        </div>
+
+        <!-- Container pour afficher les graphiques -->
+        <div class="card-container">
+            <div class="card">
+                <h2>Graphique en Barres</h2>
+                <div class="graph-container" id="graphBar">
+                    {{ bar_div|safe }}
+                    {{ bar_script|safe }}
+                </div>
+            </div>
+            <div class="card">
+                <h2>Graphique Linéaire</h2>
+                <div class="graph-container" id="graphLine">
+                    {{ line_div|safe }}
+                    {{ line_script|safe }}
+                </div>
+            </div>
+            <div class="card">
+                <h2>Graphique Circulaire</h2>
+                <div class="graph-container" id="graphPie">
+                    {{ pie_div|safe }}
+                    {{ pie_script|safe }}
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

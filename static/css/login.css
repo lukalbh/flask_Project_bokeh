@@ -1,0 +1,91 @@
+/* Style global pour le body de la page */
+body {
+    font-family: Arial, sans-serif; /* Police de caractères de type sans-serif */
+    background-color: rgb(226, 114, 40); /* Fond orange */
+}
+
+/* Style pour le titre h1 */
+h1 {
+    margin-bottom: 20px; /* Espace de 20px en bas du titre */
+}
+
+/* Style du formulaire */
+.form {
+    background-color: white; /* Fond blanc pour le formulaire */
+    display: flex; /* Utilisation de Flexbox pour la disposition des éléments */
+    flex-direction: column; /* Les éléments du formulaire seront empilés verticalement */
+    gap: 10px; /* Espacement de 10px entre les éléments du formulaire */
+    padding: 50px; /* Espacement intérieur de 50px */
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    text-align: center; /* Aligne le texte au centre */
+    border: 2px solid grey; /* Bordure grise autour du formulaire */
+    border-radius: 8px; /* Coins arrondis */
+    width: 300px; /* Largeur fixe du formulaire */
+    box-shadow: 10px 5px 5px grey; /* Ombre portée autour du formulaire */
+}
+
+/* Conteneur qui centre les éléments horizontalement */
+.divh {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centre les éléments horizontalement */
+}
+
+/* Style pour le conteneur de connexion (log) */
+.log {
+    border: solid; /* Bordure autour du conteneur */
+    background-color: aliceblue; /* Fond bleu clair pour le conteneur */
+    width: 350px; /* Largeur du conteneur */
+    margin-top: 300px; /* Marge de 300px en haut pour éloigner du haut de la page */
+    display: flex; /* Utilisation de Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    border-width: 1px; /* Bordure de 1px autour du conteneur */
+}
+
+/* Style du conteneur du formulaire de connexion */
+.divform {
+    display: flex; /* Utilisation de Flexbox pour l'alignement */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Aligne le texte au centre */
+}
+
+/* Style des étiquettes pour le champ utilisateur (userlab) */
+.userlab {
+    font-size: small; /* Taille de police petite pour l'étiquette */
+    margin-right: 85px; /* Marge à droite pour espacer l'étiquette du champ de saisie */
+    margin-top: 10px; /* Marge en haut pour espacer un peu */
+}
+
+/* Style des étiquettes pour le champ mot de passe (passlab) */
+.passlab {
+    font-size: small; /* Taille de police petite pour l'étiquette */
+    margin-right: 95px; /* Marge à droite pour espacer l'étiquette du champ de saisie */
+    margin-top: 10px; /* Marge en haut pour espacer un peu */
+}
+
+/* Style du bouton d'identification (btn-id) */
+.btn-id {
+    background-color: #f18928; /* Fond orange pour le bouton */
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 22px; /* Taille de la police plus grande pour le texte du bouton */
+}
+
+/* Style des champs de saisie pour l'utilisateur (inpu) */
+.inpu {
+    max-width: 500px; /* Largeur maximale de 500px */
+    height: 25px; /* Hauteur du champ de saisie */
+    padding: 7px; /* Espacement intérieur pour le texte */
+    background-color: rgb(190, 184, 184); /* Fond gris clair */
+    border-radius: 7px; /* Coins arrondis pour les champs de saisie */
+}
+
+/* Style des champs de saisie pour le mot de passe (inpp) */
+.inpp {
+    max-width: 500px; /* Largeur maximale de 500px */
+    height: 25px; /* Hauteur du champ de saisie */
+    padding: 7px; /* Espacement intérieur pour le texte */
+    background-color: rgb(190, 184, 184); /* Fond gris clair */
+    border-radius: 7px; /* Coins arrondis pour les champs de saisie */
+}

@@ -1,0 +1,38 @@
+{
+  "ferme1": [
+    {
+      "id": "SHIELD1",
+      "latitude": 47.2186,
+      "longitude": -1.5486
+    },
+    {
+      "id": "SHIELD2",
+      "latitude": 48.8566,
+      "longitude": 2.3522
+    }
+  ],
+  "ferme2": [
+    {
+      "id": "SHIELD3",
+      "latitude": 43.2965,
+      "longitude": 5.3698
+    },
+    {
+      "id": "SHIELD4",
+      "latitude": 45.764,
+      "longitude": 4.8357
+    }
+  ],
+  "ferme3": [
+    {
+      "id": "SHIELD5",
+      "latitude": 43.2965,
+      "longitude": 5.3698
+    },
+    {
+      "id": "SHIELD6",
+      "latitude": 45.764,
+      "longitude": 4.8357
+    }
+  ]
+}
