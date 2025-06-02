@@ -1,6 +1,5 @@
 from bokeh.plotting import figure
 from database import DBconnection
-import numpy as np
 
 from bokeh.embed import components
 
@@ -22,11 +21,39 @@ def plotex():
 
 
 def evolutionTemp():
-    plot = figure(width=500, height=300)
-    plot.line([1,2,3],[4,5,6], line_width=2)
-    script, div = components(plot)
-    return {"script" : script, "div": div}
+    db = DBconnection()
+    
+    # Température et jours
+    query = "SELECT jour, valeur FROM temperature ORDER BY jour ASC"
+    
+    try:
+        connection = db.connect()
+        cursor = connection.cursor()
+        cursor.execute(query)
+        result = cursor.fetchall()
+        cursor.close()
+    except Exception as e:
+        print("Erreur lors de la récupération des données :", e)
+        return {"script": "", "div": ""}
+    
+    # Séparer les résultats en deux listes : x (jours), y (valeurs)
+    jours = [row[0] for row in result]
+    valeurs = [row[1] for row in result]
 
+    # Créer le graphique Bokeh
+    plot = figure(width=500, height=300, title="Évolution des températures")
+    plot.line(jours, valeurs, line_width=2)
+    plot.xaxis.axis_label = "Jour"
+    plot.yaxis.axis_label = "Température (°C)"
+    plot.legend.location = "top_left"
+
+    script, div = components(plot)
+    return {"script": script, "div": div}
+
+
+ #`components(plot)` génère un script et un div pour intégrer le graphique dans une page HTML.
+ # - `script` contient le code JavaScript nécessaire pour afficher le graphique.
+ # - `div` contient le HTML nécessaire pour afficher le graphique dans un élément div spécifique.
 def evolutionTemp2():
     plot = figure(width=500, height=300)
     plot.line([1,2,3],[4,5,6], line_width=2)
