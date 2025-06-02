@@ -39,6 +39,16 @@
                 </select>
                 <div id="shieldList" style="margin-top: 15px;"></div>
             </div>
+
+            <div class="option-block">
+                <label for="dataTypeSelect"><strong>Choisir un type de donnée :</strong></label>
+                <select id="dataTypeSelect" onchange="handleDataTypeChange()">
+                    <option value="">-- Sélectionner une ferme --</option>
+                    <option value="temperature">Température</option>
+                    <option value="humidite">Humidité</option>
+                    <option value="ph">pH</option>
+                </select>
+            </div>
         </div>
 
         <!-- Container pour afficher les graphiques -->
