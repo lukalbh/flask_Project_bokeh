@@ -7,6 +7,7 @@ from bokeh.resources import CDN # Importation de CDN pour charger les ressources
 from plot import * # Importation des fonctions liées aux graphiques (evolutionTemp, plotex, etc.)
 from plotGraphique import *
 import json
+from plot2 import *
 
 # Création de l'application Flask
 app = Flask(__name__)
@@ -18,7 +19,6 @@ db = DBconnection()
 db.connect()
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), 'static/config', 'config.json')
-
 
 """
 Route /login qui renvoie vers un formulaire de connexion
@@ -62,7 +62,7 @@ def loginTech():
             """
             Si la session n'est pas authentifié alors je renvoie vers la meme page
             """
-            return render_template("login/loginTech.html", message="identifiant incorrect")
+            return render_template("login/loginTech.html", message="identifiant incorrect") 
     return render_template("login/loginTech.html")
 
 
@@ -85,6 +85,13 @@ def dash():
             tempMoyenne = round(tempMoyenne, 2)
         else:
             tempMoyenne = "Aucune donnée"
+
+        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        total_fermes = len(data)
+        # Compter le nombre total de SHIELD
+        total_shields = sum(len(shields) for shields in data.values())
         
         #génération des graphiques Bokeh
         bokeh_components = evolutionTemp()
@@ -100,8 +107,10 @@ def dash():
                                div=bokeh_components["div"],
                                script2=bokeh_components2["script"], 
                                div2=bokeh_components2["div"],
-                               tempMoyenne=tempMoyenne)
-    else:
+                               tempMoyenne=tempMoyenne,
+                               total_shields=total_shields, details=data,
+                               total_fermes=total_fermes)
+    else: 
         """
         Si la session est pas authentifié on renvoie vers login
         """
@@ -215,5 +224,10 @@ def get_event():
         "temperature": temp
     }), 200
 
+@app.route('/checkbox')
+def checkbox_plot():
+    script, div = create_date_slider_plot()
+    return render_template('checkbox_plot.html',ressources=CDN.render(), script=script, div=div)
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=5000)
