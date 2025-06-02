@@ -52,3 +52,10 @@ function handleChangeBox() {
     document.getElementById('graphLine').style.display = lineChart ? 'block' : 'none';
     document.getElementById('graphPie').style.display = pieChart ? 'block' : 'none';
 }
+
+function handleDataTypeChange() {
+    const selectedType = document.getElementById("dataTypeSelect").value;
+    console.log("Type de donnée sélectionné :", selectedType);
+    // Tu peux ensuite utiliser `selectedType` pour filtrer ou charger des données spécifiques
+    // Exemple : fetch data depuis le serveur via AJAX, re-render Bokeh, etc.
+}
