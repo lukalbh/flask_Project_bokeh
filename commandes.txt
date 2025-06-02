@@ -1,3 +1,2 @@
 source env/bin/activate
-
-
+git add config/ static/ templates/ commandes.txt database.py main.py plot.py plotGraphique.py requirements.txt
